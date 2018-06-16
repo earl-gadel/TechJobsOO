@@ -40,8 +40,8 @@ namespace TechJobs.Controllers
             if (ModelState.IsValid)
             {
                 Job newJob = new Job {
-                    Employer = newJobViewModel.Employer,
-                    Location = newJobViewModel.Location,
+                    Employer = newJobViewModel.Employers.ToString(),
+                    Location = newJobViewModel.Location.Value,
                     CoreCompetency = newJobViewModel.CoreCompetency,
                     PositionType = newJobViewModel.PositionType
                 };
