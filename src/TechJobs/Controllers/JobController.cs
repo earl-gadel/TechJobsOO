@@ -40,13 +40,14 @@ namespace TechJobs.Controllers
             if (ModelState.IsValid)
             {
                 Job newJob = new Job {
-                    Employer = newJobViewModel.Employers.ToString(),
-                    Location = newJobViewModel.Location.Value,
-                    CoreCompetency = newJobViewModel.CoreCompetency,
-                    PositionType = newJobViewModel.PositionType
+                    Name = newJobViewModel.Name,
+                    Employer = jobData.Employers.Find(newJobViewModel.EmployerID),
+                    Location = jobData.Locations.Find(newJobViewModel.LocationID),
+                    CoreCompetency = jobData.CoreCompetencies.Find(newJobViewModel.CoreCompetencyID),
+                    PositionType = jobData.PositionTypes.Find(newJobViewModel.PositionTypeID)
                 };
                 jobData.Jobs.Add(newJob);
-                Redirect("/Index");
+                return Redirect("/Job?=" + newJob.ID);
 
             }
             return View(newJobViewModel);

@@ -11,3 +11,4 @@ namespace TechJobs.ViewModels
         public List<JobFieldType> Columns { get; set; }
         public string Title { get; set; } = "";
     }
+}

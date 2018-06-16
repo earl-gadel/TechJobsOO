@@ -72,7 +72,6 @@ namespace TechJobs.ViewModels
                     Text = field.Value
                 });
             }
-
         }
     }
 }
